@@ -16,9 +16,10 @@ public class PhoneBroadcaster extends BroadcastReceiver {
 	context.startService(phoneIntent);
 	TelephonyManager tManager = (TelephonyManager)
 	    context.getSystemService(Context.TELEPHONY_SERVICE);
-	PhoneListener pListener = new PhoneListener();
+	PhoneListener pListener = new PhoneListener(context);
 	tManager.listen(pListener,
 			PhoneStateListener.LISTEN_CALL_STATE);
     }
 
 }
+
