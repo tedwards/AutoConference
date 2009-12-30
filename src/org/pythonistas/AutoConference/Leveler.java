@@ -1,9 +1,8 @@
 package org.pythonistas.AutoConference;
-
 import android.hardware.SensorListener;
 import android.hardware.SensorManager;
 import android.hardware.Sensor;
-//import android.widget.Toast;
+import android.widget.Toast;
 import android.widget.TextView;
 import android.media.AudioManager;
 import android.content.Context;
@@ -20,7 +19,9 @@ public class Leveler implements SensorListener {
     private Boolean flatState = false;
     private Context myContext = null;
     private CallReceiver myCallReceiver = null;
-    
+    final String speakerOn = "Speaker Phone is ON";
+    final String speakerOff = "Speaker Phone is OFF";
+
     public Leveler(Context context){
 	myContext = context;
 	mSensorManager = (SensorManager) myContext.getSystemService(Context.SENSOR_SERVICE);
@@ -64,8 +65,7 @@ public class Leveler implements SensorListener {
 		    if ( myCallReceiver.getCallState() == true ) {
 			AudioManager audioMan = (AudioManager) myContext.getSystemService(Context.AUDIO_SERVICE);
 			audioMan.setSpeakerphoneOn(true);
-			//			Toast.makeText(myContext, "Speaker Phone ON!",
-			//				       Toast.LENGTH_LONG).show();
+			Toast.makeText(myContext, speakerOn, Toast.LENGTH_LONG).show();
 		    }
 		}
 		else if (y>=10 && z>=10  &&flatState == true){
@@ -73,17 +73,25 @@ public class Leveler implements SensorListener {
 		    if ( myCallReceiver.getCallState() == true ) {
 			AudioManager audioMan = (AudioManager) myContext.getSystemService(Context.AUDIO_SERVICE);
 			audioMan.setSpeakerphoneOn(false);
-			//			Toast.makeText(myContext, "Speaker Phone OFF!",
-			//	       Toast.LENGTH_LONG).show();
+			Toast.makeText(myContext, speakerOff, Toast.LENGTH_LONG).show();
 		    }
 		}
             }
         }
     }
 
-   public void onAccuracyChanged(int sensor, int accuracy) {
-       
-   } 
+    // public void onCallSetup(){
+    // 	if (myCallReceiver.getCallState() == true){
+    // 	    float x = 0;
+    // 	    float y = 0;
+    // 	    float z = 0;
+    // 	    float[] values = new float[3];
+	    
+    // 	}
+    // }
 
+    public void onAccuracyChanged( int a, int b) {
+
+    }
 
 }

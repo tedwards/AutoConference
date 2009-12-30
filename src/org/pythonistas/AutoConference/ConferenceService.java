@@ -16,8 +16,8 @@ import android.widget.Toast;
 
 public class ConferenceService extends Service {
     private NotificationManager mNM;
-    private String svcEnabled = "AutoConference is Enabled";
-    private String svcDisabled = "AutoConference is Disabled";
+    final String svcEnabled = "AutoConference is Enabled";
+    final String svcDisabled = "AutoConference is Disabled";
     private Leveler level = null;
     private PhoneBroadcaster pb = null;
     /**
@@ -38,14 +38,15 @@ public class ConferenceService extends Service {
         // Display a notification about us starting.  We put an icon in the status bar.
 	level = new Leveler(this);
 	pb = new PhoneBroadcaster();
-        showNotification();
+	pb.setLeveler(level);
+        //showNotification();
     }
 
     @Override
     public void onDestroy() {
         // Cancel the persistent notification.
         //mNM.cancel(1984);
-
+	level.unregister();
         // Tell the user we stopped.
         Toast.makeText(this, svcDisabled, Toast.LENGTH_SHORT).show();
     }
@@ -62,25 +63,7 @@ public class ConferenceService extends Service {
     /**
      * Show a notification while this service is running.
      */
-    private void showNotification() {
-        Toast.makeText(this, svcEnabled, Toast.LENGTH_SHORT).show();
-        // Set the icon, scrolling text and timestamp
-	
-	//        Notification notification = new Notification(R.drawable.icon, svcEnabled,
-	//					     System.currentTimeMillis());
+    //    private void showNotification() {
+    //        Toast.makeText(this, svcEnabled, Toast.LENGTH_SHORT).show();
 
-        //Notification notification = new Notification();
-
-        // The PendingIntent to launch our activity if the user selects this notification
-        //PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-        //        new Intent(this, AutoConference.class), 0);
-
-        // Set the info for the views that show in the notification panel.
-        //notification.setLatestEventInfo(this, "Auto Conference",
-        //               svcEnabled, contentIntent);
-
-        // Send the notification.
-        // We use a layout id because it is a unique number.  We use it later to cancel.
-        //mNM.notify(1984, notification);
-    }
 }

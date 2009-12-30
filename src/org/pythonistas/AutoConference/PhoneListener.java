@@ -11,10 +11,14 @@ public class PhoneListener extends PhoneStateListener {
     protected static final String CALL_STATE_EXTRA = "callState";
     private Intent intent = new Intent(CALL_STATE_CHANGE);
     private Context myContext = null;
-    //    private Leveler myLeveler = null;
+    private Leveler myLeveler = null;
+
     public PhoneListener(Context context){
 	myContext = context;
-	//	Leveler myLeveler = new Leveler(myContext);
+    }
+    
+    public void setLeveler(Leveler level){
+	myLeveler = level;
     }
     
     public void onCallStateChanged(int state, String incomingNumber)
@@ -23,11 +27,19 @@ public class PhoneListener extends PhoneStateListener {
 
 	switch(state)
 	    {
+		//User hung up the phone
 	    case TelephonyManager.CALL_STATE_IDLE:
 		intent.putExtra(CALL_STATE_EXTRA,false);
 		myContext.sendBroadcast(intent);
+		if ( myLeveler != null ) {
+		    myLeveler.unregister();
+		}
 		break;
+		//User picked up the phone
 	    case TelephonyManager.CALL_STATE_OFFHOOK:
+		if ( myLeveler != null ) {
+		    myLeveler.register();
+		}
 		intent.putExtra(CALL_STATE_EXTRA,true);
 		myContext.sendBroadcast(intent);
 		break;
