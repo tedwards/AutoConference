@@ -53,6 +53,7 @@ public class AutoConference extends Activity {
 		    if ( running == false ) {
 			running=true;
 			startService(new Intent(AutoConference.this, ConferenceService.class));
+			startService(new Intent("org.pythonistas.AutoConference.REMOTE_SERVICE"));
 			tSwitch.setImageResource(R.drawable.speaker_accept);
 			//			Toast.makeText(AutoConference.this, svcEnabled, Toast.LENGTH_SHORT).show();
 			tStatus.setText("AutoConference Enabled");
@@ -61,6 +62,7 @@ public class AutoConference extends Activity {
 		    else {
 			running=false;
 			stopService(new Intent(AutoConference.this, ConferenceService.class));
+			stopService(new Intent("org.pythonistas.AutoConference.REMOTE_SERVICE"));
 			tSwitch.setImageResource(R.drawable.speaker_delete);
 			//			Toast.makeText(AutoConference.this, svcDisabled, Toast.LENGTH_SHORT).show();
 			tStatus.setText("AutoConference Disabled");

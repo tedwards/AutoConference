@@ -35,17 +35,13 @@ public class ConferenceService extends Service {
     @Override
     public void onCreate() {
         mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        // Display a notification about us starting.  We put an icon in the status bar.
 	level = new Leveler(this);
 	pb = new PhoneBroadcaster();
-	pb.setLeveler(level);
-        //showNotification();
+	//pb.setLeveler(level);
     }
 
     @Override
     public void onDestroy() {
-        // Cancel the persistent notification.
-        //mNM.cancel(1984);
 	level.unregister();
         // Tell the user we stopped.
         Toast.makeText(this, svcDisabled, Toast.LENGTH_SHORT).show();

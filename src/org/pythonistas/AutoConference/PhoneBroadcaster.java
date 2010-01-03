@@ -8,11 +8,11 @@ import android.telephony.TelephonyManager;
 
 
 public class PhoneBroadcaster extends BroadcastReceiver {
-    private Leveler myLeveler;
+    // private Leveler myLeveler;
 
-    public void setLeveler(Leveler level){
-	myLeveler = level;
-    }
+    // public void setLeveler(Leveler level){
+    // 	myLeveler = level;
+    // }
 
     public void onReceive(Context context, Intent intent)
     {
@@ -23,7 +23,7 @@ public class PhoneBroadcaster extends BroadcastReceiver {
 	TelephonyManager tManager = (TelephonyManager)
 	    context.getSystemService(Context.TELEPHONY_SERVICE);
 	PhoneListener pListener = new PhoneListener(context);
-	pListener.setLeveler(myLeveler);
+	//	pListener.setLeveler(myLeveler);
 	tManager.listen(pListener,
 			PhoneStateListener.LISTEN_CALL_STATE);
     }
