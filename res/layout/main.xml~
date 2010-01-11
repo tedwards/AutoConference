@@ -7,6 +7,15 @@ android:orientation="vertical"
 xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res/org.pythonistas.AutoConference"
 >
+<com.admob.android.ads.AdView  
+    android:id="@+id/ad" 
+    android:visibility="visible"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    app:backgroundColor="#000000"
+    app:textColor="#FFFFFF"
+    app:keywords="Android Conference Phone Bluetooth"
+    />
 
 <ImageButton
 android:id="@+id/notifyButton"

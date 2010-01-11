@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.content.Intent;
 import android.content.Context;
-//import com.admob.android.ads.AdView;
+import com.admob.android.ads.AdView;
 //import android.widget.Toast;
 
 public class AutoConference extends Activity {
@@ -20,7 +20,7 @@ public class AutoConference extends Activity {
     private boolean firstrun = true;
     private ImageButton tSwitch = null;
     private TextView tStatus = null;
-    //  private AdView mAd;
+    private AdView mAd;
     /** Called when the activity is first created. */
     @Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -28,9 +28,9 @@ public class AutoConference extends Activity {
         setContentView(R.layout.main);
         tSwitch = (ImageButton)findViewById(R.id.notifyButton);
 	tStatus = (TextView)findViewById(R.id.svcStatusTextView);
-	//mAd = (AdView) findViewById(R.id.ad);
+	mAd = (AdView) findViewById(R.id.ad);
 	//	mAd.setVisibility(View.VISIBLE);
-	//mAd.requestFreshAd();
+	mAd.requestFreshAd();
 
 	if (firstrun == true){
 	    firstrun=false;	    

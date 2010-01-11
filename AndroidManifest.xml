@@ -22,7 +22,6 @@
 	<action android:name="android.intent.action.PHONE_STATE" />
       </intent-filter>
     </receiver>
-  <meta-data android:value="a14b34e6db249a2" android:name="ADMOB_PUBLISHER_ID" />
   </application>
 
   <uses-permission android:name="android.permission.READ_PHONE_STATE" /> 
@@ -30,7 +29,5 @@
   <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" /> 
   <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> 
 
-  <!-- AdMob SDK permissions -->
-  <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest> 
