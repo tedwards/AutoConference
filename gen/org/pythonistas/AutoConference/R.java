@@ -65,21 +65,29 @@ containing a value of this type.
         public static final int speaker=0x7f020001;
         public static final int speaker_accept=0x7f020002;
         public static final int speaker_delete=0x7f020003;
+        public static final int widget_accept=0x7f020004;
+        public static final int widget_delete=0x7f020005;
     }
     public static final class id {
-        public static final int ad=0x7f050001;
-        public static final int notifyButton=0x7f050002;
-        public static final int svcStatusTextView=0x7f050003;
-        public static final int widget28=0x7f050000;
+        public static final int ad=0x7f060001;
+        public static final int notifyButton=0x7f060002;
+        public static final int notifyWidgetButton=0x7f060004;
+        public static final int svcStatusTextView=0x7f060003;
+        public static final int widget28=0x7f060000;
     }
     public static final class layout {
         public static final int main=0x7f030000;
+        public static final int toggle_widget=0x7f030001;
     }
     public static final class string {
-        public static final int app_name=0x7f040000;
-        public static final int remote_service_label=0x7f040003;
-        public static final int remote_service_started=0x7f040001;
-        public static final int remote_service_stopped=0x7f040002;
+        public static final int app_name=0x7f050000;
+        public static final int remote_service_label=0x7f050004;
+        public static final int remote_service_started=0x7f050002;
+        public static final int remote_service_stopped=0x7f050003;
+        public static final int widget_name=0x7f050001;
+    }
+    public static final class xml {
+        public static final int toggle_widget_info=0x7f040000;
     }
     public static final class styleable {
         /** Attributes that can be used with a com_admob_android_ads_AdView.

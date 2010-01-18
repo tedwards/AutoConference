@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Auto Conference</string>
+    <string name="widget_name">Auto Conference Widget</string>
     <string name="remote_service_started">Remote service has started</string>
     <string name="remote_service_stopped">Remote service has stopped</string>
     <string name="remote_service_label">Sample Remote Service</string>

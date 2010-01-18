@@ -28,8 +28,8 @@ public class AutoConference extends Activity {
         setContentView(R.layout.main);
         tSwitch = (ImageButton)findViewById(R.id.notifyButton);
 	tStatus = (TextView)findViewById(R.id.svcStatusTextView);
+	
 	mAd = (AdView) findViewById(R.id.ad);
-	//	mAd.setVisibility(View.VISIBLE);
 	mAd.requestFreshAd();
 
 	if (firstrun == true){
@@ -53,7 +53,7 @@ public class AutoConference extends Activity {
 		    if ( running == false ) {
 			running=true;
 			startService(new Intent(AutoConference.this, ConferenceService.class));
-			startService(new Intent("org.pythonistas.AutoConference.REMOTE_SERVICE"));
+			//startService(new Intent("org.pythonistas.AutoConference.REMOTE_SERVICE"));
 			tSwitch.setImageResource(R.drawable.speaker_accept);
 			//			Toast.makeText(AutoConference.this, svcEnabled, Toast.LENGTH_SHORT).show();
 			tStatus.setText("AutoConference Enabled");
@@ -62,7 +62,7 @@ public class AutoConference extends Activity {
 		    else {
 			running=false;
 			stopService(new Intent(AutoConference.this, ConferenceService.class));
-			stopService(new Intent("org.pythonistas.AutoConference.REMOTE_SERVICE"));
+			//stopService(new Intent("org.pythonistas.AutoConference.REMOTE_SERVICE"));
 			tSwitch.setImageResource(R.drawable.speaker_delete);
 			//			Toast.makeText(AutoConference.this, svcDisabled, Toast.LENGTH_SHORT).show();
 			tStatus.setText("AutoConference Disabled");
