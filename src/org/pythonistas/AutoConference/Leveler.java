@@ -91,7 +91,7 @@ public class Leveler implements SensorListener {
             if (sensor == SensorManager.SENSOR_ORIENTATION) {
 		float y=Math.abs(values[1]);
 		    float z=Math.abs(values[2]);
-		    if ( y<=10 && z<=10  && flatState==false) {
+		    if ( (y<=10 || y>=170) && (z<=10) && flatState==false) {
 		    flatState = true;
 		    if ( myCallReceiver.getCallState() == true ) {
 			AudioManager audioMan = (AudioManager) myContext.getSystemService(Context.AUDIO_SERVICE);
