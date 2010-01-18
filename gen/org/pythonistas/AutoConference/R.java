@@ -67,9 +67,8 @@ containing a value of this type.
         public static final int speaker_delete=0x7f020003;
     }
     public static final class id {
-        public static final int ad=0x7f050001;
-        public static final int notifyButton=0x7f050002;
-        public static final int svcStatusTextView=0x7f050003;
+        public static final int notifyButton=0x7f050001;
+        public static final int svcStatusTextView=0x7f050002;
         public static final int widget28=0x7f050000;
     }
     public static final class layout {
