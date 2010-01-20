@@ -70,8 +70,10 @@ containing a value of this type.
     }
     public static final class id {
         public static final int ad=0x7f060001;
+        public static final int buyButton=0x7f060005;
         public static final int notifyButton=0x7f060002;
-        public static final int notifyWidgetButton=0x7f060004;
+        public static final int notifyWidgetButton=0x7f060006;
+        public static final int paidPitchTextView=0x7f060004;
         public static final int svcStatusTextView=0x7f060003;
         public static final int widget28=0x7f060000;
     }

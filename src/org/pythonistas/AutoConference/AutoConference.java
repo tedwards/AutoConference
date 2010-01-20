@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.TextView;
 import android.content.Intent;
 import android.content.Context;
+import android.net.Uri;
 import com.admob.android.ads.AdView;
 //import android.widget.Toast;
 
@@ -19,6 +21,7 @@ public class AutoConference extends Activity {
     private boolean running = false;
     private boolean firstrun = true;
     private ImageButton tSwitch = null;
+    private Button buyButton = null;
     private TextView tStatus = null;
     private AdView mAd;
     /** Called when the activity is first created. */
@@ -27,6 +30,7 @@ public class AutoConference extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         tSwitch = (ImageButton)findViewById(R.id.notifyButton);
+        buyButton = (Button)findViewById(R.id.buyButton);
 	tStatus = (TextView)findViewById(R.id.svcStatusTextView);
 	
 	mAd = (AdView) findViewById(R.id.ad);
@@ -71,6 +75,14 @@ public class AutoConference extends Activity {
 		}
 	    });
 
+	buyButton.setOnClickListener(new OnClickListener() {
+		public void onClick(View v){
+
+		    Intent buyIntent = new Intent("android.intent.action.VIEW", Uri.parse("market://search?q=pname:com.pythonistas.AutoConference")); 
+		    startActivity(buyIntent);
+
+		}
+	    });
     }
     
 }

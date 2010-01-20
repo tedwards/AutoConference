@@ -35,4 +35,25 @@ android:editable="false"
 >
 </TextView>
 
+<TextView
+android:id="@+id/paidPitchTextView"
+android:layout_width="319px"
+android:layout_height="41px"
+android:layout_marginTop="5px"
+android:layout_marginBottom="5px"
+android:layout_marginLeft="5px"
+android:layout_marginRight="5px"
+android:text="If you like this application, please consider buying the paid version by clicking the link below."
+android:gravity="left"
+>
+</TextView>
+
+<Button
+android:id="@+id/buyButton"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:text="Buy AutoConference"
+>
+</Button>
+
 </LinearLayout>
